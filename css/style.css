@@ -90,26 +90,37 @@
 }
 
 /*** Navbar ***/
-.navbar.sticky-top {
-    position: sticky;
+/* Find and replace this rule in your CSS */
+
+/*** Navbar ***/
+.navbar {
+    position: fixed; /* Force the navbar to be fixed to the viewport */
     top: 0;
-    z-index: 1020; /* Ensures the navbar stays on top of other content */
-    background-color: transparent !important; /* Forces a transparent background */
-    transition: background-color 0.5s ease; /* Smooth transition for any scroll effects */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.4s ease; /* Smooth transition for background */
+    background-color: #ffffff; /* Start fully transparent */
 }
 
-/* This class is added by JavaScript on scroll.
-  You can use it to add a subtle effect, like a shadow or a semi-transparent background.
-  If you want it to remain fully transparent, you can remove this rule.
-*/
-.navbar-scrolled {
-    background-color: rgba(255, 255, 255, 0.9) !important; /* Example: A slightly opaque white background on scroll */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* This class is added by JavaScript on scroll */
+.navbar.navbar-scrolled {
+    background-color: #ffffff; /* Becomes white on scroll */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow */
 }
 
-.navbar .navbar-brand {
-    height: auto; 
-    padding: 5px 0; 
+/* In css/style.css */
+
+.logo-img {
+    max-height: 60px;
+    width: auto;
+    /* Add this line to create a subtle white glow */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); 
+}
+
+/* This is NEW and IMPORTANT. It prevents your page content from starting hidden behind the navbar. */
+body {
+    padding-top: 90px; /* Adjust this value if your navbar height changes */
 }
 
 .logo-img {

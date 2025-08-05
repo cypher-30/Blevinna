@@ -36,11 +36,11 @@ $(function(){
 
 // Sticky Navbar
 $(window).scroll(function () {
-    // Add the .navbar-scrolled class when the user scrolls more than 50 pixels
+    // If we scroll more than 50px, add the 'navbar-scrolled' class.
+    // Otherwise, remove it.
     if ($(this).scrollTop() > 50) {
         $('.navbar').addClass('navbar-scrolled');
     } else {
-        // Remove the class when the user is at the top of the page
         $('.navbar').removeClass('navbar-scrolled');
     }
 });
