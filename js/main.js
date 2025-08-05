@@ -1,3 +1,21 @@
+$(function(){
+    $("#navbar-placeholder").load("navbar.html", function() {
+        var currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === '') {
+            currentPage = 'index.html';
+        }
+        $('#navbarCollapse .navbar-nav a.nav-link').each(function(){
+            var linkPage = $(this).attr('href');
+            if(linkPage === currentPage){
+                $(this).addClass('active');
+            }
+        });
+    });
+
+
+    $("#footer-placeholder").load("footer.html");
+});
+
 (function ($) {
     "use strict";
 
@@ -16,14 +34,16 @@
     new WOW().init();
 
 
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.sticky-top').addClass('shadow-sm').css('top', '0px');
-        } else {
-            $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
-        }
-    });
+// Sticky Navbar
+$(window).scroll(function () {
+    // Add the .navbar-scrolled class when the user scrolls more than 50 pixels
+    if ($(this).scrollTop() > 50) {
+        $('.navbar').addClass('navbar-scrolled');
+    } else {
+        // Remove the class when the user is at the top of the page
+        $('.navbar').removeClass('navbar-scrolled');
+    }
+});
     
     
     // Back to top button
