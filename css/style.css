@@ -115,11 +115,7 @@ body {
     padding-top: 90px;
 }
 
-.logo-img {
-    max-height: 60px;
-    width: auto;
-    mix-blend-mode: multiply;
-}
+
 
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
@@ -127,6 +123,13 @@ body {
     color: var(--dark);
     font-weight: 500;
     outline: none;
+}
+
+/* logo */
+.logo-img {
+    max-height: 60px;
+    width: auto;
+    mix-blend-mode: multiply;
 }
 
 /*** Header ***/
@@ -547,8 +550,4 @@ body {
     color: var(--primary);
     letter-spacing: 1px;
     box-shadow: none;
-}
-.logo-img {
-    max-height: 60px; /* Adjust this value to your desired logo size */
-    width: auto;
 }
